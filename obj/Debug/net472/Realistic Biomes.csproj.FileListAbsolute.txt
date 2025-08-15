@@ -1,0 +1,35 @@
+C:\Users\Chris\Documents\Realistic Biomes\obj\Debug\net472\Realistic Biomes.csproj.AssemblyReference.cache
+C:\Users\Chris\Documents\Realistic Biomes\obj\Debug\net472\Realistic Biomes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chris\Documents\Realistic Biomes\obj\Debug\net472\Realistic Biomes.AssemblyInfoInputs.cache
+C:\Users\Chris\Documents\Realistic Biomes\obj\Debug\net472\Realistic Biomes.AssemblyInfo.cs
+C:\Users\Chris\Documents\Realistic Biomes\obj\Debug\net472\Realistic Biomes.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\Realistic Biomes.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\Realistic Biomes.pdb
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\Assembly-CSharp.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.IMGUIModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.CoreModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.TextRenderingModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\NAudio.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\NVorbis.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.AudioModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\com.rlabrecque.steamworks.net.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\Assembly-CSharp-firstpass.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\Unity.Burst.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.AssetBundleModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\Unity.Mathematics.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.PhysicsModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\Unity.TextMeshPro.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\ISharpZipLib.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.InputLegacyModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.PerformanceReportingModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.ImageConversionModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.ScreenCaptureModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.UI.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.SharedInternalsModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\Unity.Burst.Unsafe.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.TextCoreModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.UIModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.Physics2DModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\bin\Debug\net472\UnityEngine.AnimationModule.dll
+C:\Users\Chris\Documents\Realistic Biomes\obj\Debug\net472\Realistic Biomes.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\realistic_biomes\Assemblies\Realistic Biomes.dll

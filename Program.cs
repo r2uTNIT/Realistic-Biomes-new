@@ -1,0 +1,59 @@
+﻿using HarmonyLib;
+using Verse;
+using UnityEngine;
+using RimworldPlusPlus.RealisticBiomes;
+
+namespace RimworldPlusPlus{
+    class Program : Mod{
+        public readonly RimworldPlusPlusSettings settings;
+
+        Program(ModContentPack content) : base(content){
+            settings = GetSettings<RimworldPlusPlusSettings>();
+
+            Harmony harmony = new Harmony("Rimworld++");
+
+            if(settings.realisticBiomes){
+                harmony.PatchCategory("Realistic Biomes");
+            }
+        }
+        public override string SettingsCategory(){
+            return "Rimworld++";
+        }
+        public override void DoSettingsWindowContents(Rect inRect){
+            Listing_Standard listingStandard = new Listing_Standard();
+            listingStandard.Begin(inRect);
+            listingStandard.Label("Any field marked with an asterisk (*) will require a game restart to take effect");
+            listingStandard.Gap(8f);
+            listingStandard.CheckboxLabeled("Realistic Biomes Module*", ref settings.realisticBiomes, "Completely disable the Realistic Biomes module");
+            listingStandard.Gap(8f);
+            listingStandard.Label("Sea Level");
+
+            if(listingStandard.RadioButton("Very dry", settings.seaLevel == SeaLevel.VeryDry, 16f)){
+                settings.seaLevel = SeaLevel.VeryDry;
+            }
+            else if(listingStandard.RadioButton("Dry", settings.seaLevel == SeaLevel.Dry, 16f)){
+                settings.seaLevel = SeaLevel.Dry;
+            }
+            else if(listingStandard.RadioButton("Vanilla", settings.seaLevel == SeaLevel.Vanilla, 16f)){
+                settings.seaLevel = SeaLevel.Vanilla;
+            }
+            else if(listingStandard.RadioButton("Earthlike", settings.seaLevel == SeaLevel.Earthlike, 16f)){
+                settings.seaLevel = SeaLevel.Earthlike;
+            }
+            else if(listingStandard.RadioButton("Islands", settings.seaLevel == SeaLevel.Islands, 16f)){
+                settings.seaLevel = SeaLevel.Islands;
+            }
+            else if(listingStandard.RadioButton("Waterworld", settings.seaLevel == SeaLevel.Waterworld, 16f)){
+                settings.seaLevel = SeaLevel.Waterworld;
+            }
+            listingStandard.GapLine(16f);
+            listingStandard.CheckboxLabeled("Realism Overhaul Module*", ref settings.realismOverhaul, "Completely disable the Realism Overhaul module");
+            listingStandard.Gap(8f);
+            listingStandard.CheckboxLabeled("Darker nights*", ref settings.darkerNights, "Make nighttime (& eclipses) darker");
+            listingStandard.End();
+        }
+        public static Program GetMod(){
+            return LoadedModManager.GetMod<Program>();
+        }
+    }
+}
