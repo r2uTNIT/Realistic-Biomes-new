@@ -4,17 +4,18 @@ using UnityEngine;
 using RimworldPlusPlus.RealisticBiomes;
 
 namespace RimworldPlusPlus{
-    class Program : Mod{
-        public readonly RimworldPlusPlusSettings settings;
+    class RimworldPlusPlus : Mod{
+        public static readonly RimworldPlusPlusSettings settings;
 
-        public Program(ModContentPack content) : base(content){
-            settings = GetSettings<RimworldPlusPlusSettings>();
-
+        public RimworldPlusPlus(ModContentPack content) : base(content){
             Harmony harmony = new Harmony("Rimworld++");
 
             if(settings.realisticBiomes){
                 harmony.PatchCategory("Realistic Biomes");
             }
+        }
+        static RimworldPlusPlus(){
+            settings = LoadedModManager.GetMod<RimworldPlusPlus>().GetSettings<RimworldPlusPlusSettings>();
         }
         public override string SettingsCategory(){
             return "Rimworld++";
@@ -51,9 +52,6 @@ namespace RimworldPlusPlus{
             listingStandard.Gap(8f);
             listingStandard.CheckboxLabeled("Darker nights*", ref settings.darkerNights, "Make nighttime (& eclipses) darker");
             listingStandard.End();
-        }
-        public static Program GetMod(){
-            return LoadedModManager.GetMod<Program>();
         }
     }
 }

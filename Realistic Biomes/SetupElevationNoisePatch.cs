@@ -7,7 +7,7 @@ namespace RimworldPlusPlus.RealisticBiomes{
     [HarmonyPatchCategory("Realistic Biomes")]
     static class SetupElevationNoisePatch{
         static void Prefix(ref FloatRange ___ElevationRange){
-            switch(Program.GetMod().settings.seaLevel){
+            switch(RimworldPlusPlus.settings.seaLevel){
                 case SeaLevel.VeryDry: 
                     ___ElevationRange = new FloatRange(-50f, 5000f);
 

@@ -2,10 +2,9 @@ using System.Linq;
 using System.Xml;
 using Verse;
 
+// *
 namespace RimworldPlusPlus.RealismOverhaul{
     public class PatchOperationReplaceDarkerNights : PatchOperationPathed{
-        private readonly RimworldPlusPlusSettings settings = Program.GetMod().settings;
-
 		private XmlContainer value;
 
 		protected override bool ApplyWorker(XmlDocument xml){
@@ -13,7 +12,7 @@ namespace RimworldPlusPlus.RealismOverhaul{
 			
             bool result = false;
 			
-            if(settings.realismOverhaul && settings.darkerNights){ // Only change this condition, nothing else
+            if(RimworldPlusPlus.settings.realismOverhaul && RimworldPlusPlus.settings.darkerNights){
                 XmlNode[] array = xml.SelectNodes(xpath).Cast<XmlNode>().ToArray();
 
                 foreach (XmlNode xmlNode in array){

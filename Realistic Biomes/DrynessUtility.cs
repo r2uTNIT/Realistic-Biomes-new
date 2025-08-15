@@ -7,9 +7,7 @@ namespace RimworldPlusPlus.RealisticBiomes{
             else if(rainfall < 20 * temp * 2){
                 return Dryness.Semiarid;
             }
-            else{
-                return Dryness.Wet;
-            }
+            return Dryness.Wet;
         }
     }
 }

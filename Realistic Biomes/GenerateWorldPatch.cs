@@ -6,7 +6,7 @@ namespace RimworldPlusPlus.RealisticBiomes{
     [HarmonyPatchCategory("Realistic Biomes")]
     static class GenerateWorldPatch{
         static void Prefix(ref OverallRainfall overallRainfall){
-            switch(Program.GetMod().settings.seaLevel){
+            switch(RimworldPlusPlus.settings.seaLevel){
                 case SeaLevel.VeryDry:
                     overallRainfall = OverallRainfall.AlmostNone; 
 

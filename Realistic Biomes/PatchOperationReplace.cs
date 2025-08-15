@@ -2,6 +2,7 @@ using System.Linq;
 using System.Xml;
 using Verse;
 
+// *
 namespace RimworldPlusPlus.RealisticBiomes{
 	public class PatchOperationReplace : PatchOperationPathed{
 		private XmlContainer value;
@@ -11,7 +12,7 @@ namespace RimworldPlusPlus.RealisticBiomes{
 			
             bool result = false;
 			
-            if(Program.GetMod().settings.realisticBiomes){ // Only change this condition, nothing else
+            if(RimworldPlusPlus.settings.realisticBiomes){
                 XmlNode[] array = xml.SelectNodes(xpath).Cast<XmlNode>().ToArray();
 
                 foreach (XmlNode xmlNode in array){

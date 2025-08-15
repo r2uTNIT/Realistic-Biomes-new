@@ -2,9 +2,10 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
+// *
 namespace RimworldPlusPlus.RealismOverhaul{
     class GameCondition_NoSunlightDark : GameCondition{
-		SkyColorSet EclipseSkyColors = new SkyColorSet(new Color(0.1f, 0.1f, 0.1f), Color.white, new Color(0.1f, 0.1f, 0.1f), 1f); // Only change this line, nothing else
+		SkyColorSet EclipseSkyColors = new SkyColorSet(new Color(0.1f, 0.1f, 0.1f), Color.white, new Color(0.1f, 0.1f, 0.1f), 1f);
 
 		public override int TransitionTicks => 200;
 

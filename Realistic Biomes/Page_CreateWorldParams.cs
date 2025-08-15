@@ -6,9 +6,10 @@ using Verse;
 using Verse.Profile;
 using Verse.Sound;
 
+// *
 namespace RimworldPlusPlus.RealisticBiomes{
     public class Page_CreateWorldParams : Page // Create world page without rainfall slider
-{
+{ 
     private bool initialized;
 
     private string seedString;
