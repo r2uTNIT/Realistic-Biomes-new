@@ -7,7 +7,7 @@ namespace RimworldPlusPlus{
     class Program : Mod{
         public readonly RimworldPlusPlusSettings settings;
 
-        Program(ModContentPack content) : base(content){
+        public Program(ModContentPack content) : base(content){
             settings = GetSettings<RimworldPlusPlusSettings>();
 
             Harmony harmony = new Harmony("Rimworld++");
