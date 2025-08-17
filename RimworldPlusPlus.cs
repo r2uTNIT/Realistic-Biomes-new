@@ -4,18 +4,17 @@ using UnityEngine;
 using RimworldPlusPlus.RealisticBiomes;
 
 namespace RimworldPlusPlus{
-    class RimworldPlusPlus : Mod{
-        public static readonly RimworldPlusPlusSettings settings;
+    internal class RimworldPlusPlus : Mod{
+        public static RimworldPlusPlusSettings settings;
 
         public RimworldPlusPlus(ModContentPack content) : base(content){
+            settings = GetSettings<RimworldPlusPlusSettings>();
+
             Harmony harmony = new Harmony("Rimworld++");
 
             if(settings.realisticBiomes){
                 harmony.PatchCategory("Realistic Biomes");
             }
-        }
-        static RimworldPlusPlus(){
-            settings = LoadedModManager.GetMod<RimworldPlusPlus>().GetSettings<RimworldPlusPlusSettings>();
         }
         public override string SettingsCategory(){
             return "Rimworld++";

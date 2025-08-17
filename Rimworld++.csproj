@@ -8,6 +8,7 @@
 		<OutDir>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Rimworld++\Assemblies</OutDir>
 		<DebugType>embedded</DebugType>
         <NoWarn>IDE0130</NoWarn>
+        <NoWarn>IDE0059</NoWarn>
         <NoWarn>CS0649</NoWarn>
   	</PropertyGroup>
   

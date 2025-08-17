@@ -2,24 +2,72 @@ using RimWorld.Planet;
 using RimWorld;
 
 namespace RimworldPlusPlus.RealisticBiomes{
-    class HotDesert : BiomeWorker{
+    internal class HotDesert : BiomeWorker{
         public override float GetScore(BiomeDef biome, Tile tile, PlanetTile planetTile){
-            return 0f;
+            if(!RimworldPlusPlus.settings.realisticBiomes){
+                return 0f;
+            }
+            else if(tile.WaterCovered){
+                return 0f;
+            }
+            else if(DrynessUtility.IsDry(tile.temperature, tile.rainfall) != Dryness.Arid){
+                return 0f;
+            }
+            else if(tile.temperature < 18){
+                return 0f;
+            }
+            return 100f;
         }
     }
-    class ColdDesert : BiomeWorker{
+    internal class ColdDesert : BiomeWorker{
         public override float GetScore(BiomeDef biome, Tile tile, PlanetTile planetTile){
-            return 0f;
+            if(!RimworldPlusPlus.settings.realisticBiomes){
+                return 0f;
+            }
+            else if(tile.WaterCovered){
+                return 0f;
+            }
+            else if(DrynessUtility.IsDry(tile.temperature, tile.rainfall) != Dryness.Arid){
+                return 0f;
+            }
+            else if(tile.temperature >= 18){
+                return 0f;
+            }
+            return 100f;
         }
     }
-    class HotSteppe : BiomeWorker{
+    internal class HotSteppe : BiomeWorker{
         public override float GetScore(BiomeDef biome, Tile tile, PlanetTile planetTile){
-            return 0f;
+            if(!RimworldPlusPlus.settings.realisticBiomes){
+                return 0f;
+            }
+            else if(tile.WaterCovered){
+                return 0f;
+            }
+            else if(DrynessUtility.IsDry(tile.temperature, tile.rainfall) != Dryness.Semiarid){
+                return 0f;
+            }
+            else if(tile.temperature < 18){
+                return 0f;
+            }
+            return 100f;
         }
     }
-    class ColdSteppe : BiomeWorker{
+    internal class ColdSteppe : BiomeWorker{
         public override float GetScore(BiomeDef biome, Tile tile, PlanetTile planetTile){
-            return 0f;
+            if(!RimworldPlusPlus.settings.realisticBiomes){
+                return 0f;
+            }
+            else if(tile.WaterCovered){
+                return 0f;
+            }
+            else if(DrynessUtility.IsDry(tile.temperature, tile.rainfall) != Dryness.Semiarid){
+                return 0f;
+            }
+            else if(tile.temperature >= 18){
+                return 0f;
+            }
+            return 100f;
         }
     }
 }

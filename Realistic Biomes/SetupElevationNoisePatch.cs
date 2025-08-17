@@ -5,7 +5,7 @@ using Verse;
 namespace RimworldPlusPlus.RealisticBiomes{
     [HarmonyPatch(typeof(WorldGenStep_Terrain), "SetupElevationNoise")]
     [HarmonyPatchCategory("Realistic Biomes")]
-    static class SetupElevationNoisePatch{
+    internal static class SetupElevationNoisePatch{
         static void Prefix(ref FloatRange ___ElevationRange){
             switch(RimworldPlusPlus.settings.seaLevel){
                 case SeaLevel.VeryDry: 

@@ -1,6 +1,7 @@
 using HarmonyLib;
 using RimWorld;
 
+// *
 namespace RimworldPlusPlus.RealisticBiomes{
     [HarmonyPatch(typeof(PageUtility), "StitchedPages")]
     [HarmonyPatchCategory("Realistic Biomes")]

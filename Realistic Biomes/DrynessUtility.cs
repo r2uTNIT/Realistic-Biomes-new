@@ -1,5 +1,5 @@
 namespace RimworldPlusPlus.RealisticBiomes{
-    static class DrynessUtility{
+    internal static class DrynessUtility{
         public static Dryness IsDry(float temp, float rainfall){
             if(rainfall < 20 * temp){
                 return Dryness.Arid;

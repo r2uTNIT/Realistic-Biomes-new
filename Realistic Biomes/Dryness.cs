@@ -1,5 +1,5 @@
 namespace RimworldPlusPlus.RealisticBiomes{
-    enum Dryness{
+    internal enum Dryness{
         Arid,
         Semiarid,
         Wet

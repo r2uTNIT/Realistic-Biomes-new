@@ -4,7 +4,7 @@ using RimWorld.Planet;
 namespace RimworldPlusPlus.RealisticBiomes{
     [HarmonyPatch(typeof(WorldGenerator), "GenerateWorld")]
     [HarmonyPatchCategory("Realistic Biomes")]
-    static class GenerateWorldPatch{
+    internal static class GenerateWorldPatch{
         static void Prefix(ref OverallRainfall overallRainfall){
             switch(RimworldPlusPlus.settings.seaLevel){
                 case SeaLevel.VeryDry:
