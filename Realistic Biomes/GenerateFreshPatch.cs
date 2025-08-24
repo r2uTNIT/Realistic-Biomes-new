@@ -66,7 +66,7 @@ namespace RimworldPlusPlus.RealisticBiomes{
                     case Dryness.Wet:
                         if(tile.swampiness >= 0.75f){
                             if(validTropicalMonths == 12){
-                                tile.PrimaryBiome = BiomeDefs.TropicalSwamp;
+                                tile.PrimaryBiome = BiomeDefs.TropicalWetSwamp;
 
                                 break;
                             }

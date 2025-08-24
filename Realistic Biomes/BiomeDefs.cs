@@ -5,7 +5,7 @@ namespace RimworldPlusPlus.RealisticBiomes{
     internal static class BiomeDefs{
         public static BiomeDef TropicalWetRainforest;
         public static BiomeDef TropicalWet;
-        public static BiomeDef TropicalSwamp;
+        public static BiomeDef TropicalWetSwamp;
 
         public static BiomeDef HotDesert;
         public static BiomeDef ColdDesert;
