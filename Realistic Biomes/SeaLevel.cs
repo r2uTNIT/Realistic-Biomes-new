@@ -1,5 +1,5 @@
 namespace RimworldPlusPlus.RealisticBiomes{
-    internal enum SeaLevel{
+    enum SeaLevel{
         VeryDry,
         Dry,
         Vanilla,

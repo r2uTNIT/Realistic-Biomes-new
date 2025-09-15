@@ -4,7 +4,7 @@ using UnityEngine;
 using RimworldPlusPlus.RealisticBiomes;
 
 namespace RimworldPlusPlus{
-    internal class RimworldPlusPlus : Mod{
+    class RimworldPlusPlus : Mod{
         public static RimworldPlusPlusSettings settings;
 
         public RimworldPlusPlus(ModContentPack content) : base(content){
@@ -47,8 +47,6 @@ namespace RimworldPlusPlus{
                 settings.seaLevel = SeaLevel.Waterworld;
             }
             listingStandard.GapLine(16f);
-            listingStandard.CheckboxLabeled("Realism Overhaul Module*", ref settings.realismOverhaul, "Completely disable the Realism Overhaul module");
-            listingStandard.Gap(8f);
             listingStandard.CheckboxLabeled("Darker nights*", ref settings.darkerNights, "Make nighttime (& eclipses) darker");
             listingStandard.End();
         }

@@ -1,5 +1,5 @@
 namespace RimworldPlusPlus.RealisticBiomes{
-    internal static class DrynessUtility{
+    static class DrynessUtility{
         public static Dryness IsDry(float temp, float rainfall){
             float rainfall_percent = rainfall / 2;
 

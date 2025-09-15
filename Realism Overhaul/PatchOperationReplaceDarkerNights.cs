@@ -12,7 +12,7 @@ namespace RimworldPlusPlus.RealismOverhaul{
 			
             bool result = false;
 			
-            if(RimworldPlusPlus.settings.realismOverhaul && RimworldPlusPlus.settings.darkerNights){
+            if(RimworldPlusPlus.settings.darkerNights){
                 XmlNode[] array = xml.SelectNodes(xpath).Cast<XmlNode>().ToArray();
 
                 foreach (XmlNode xmlNode in array){

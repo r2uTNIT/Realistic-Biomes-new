@@ -8,15 +8,15 @@ using Verse;
 namespace RimworldPlusPlus.RealisticBiomes{
     [HarmonyPatch(typeof(WorldGenStep_Tiles), "GenerateFresh")]
     [HarmonyPatchCategory("Realistic Biomes")]
-    internal static class GenerateFreshPatch{
+    static class GenerateFreshPatch{
         // Calculating monthly temps once after tile generation is faster than calculating multiple times for every biome with BiomeWorker
-        private static void Postfix(PlanetLayer layer){
+        static void Postfix(PlanetLayer layer){
             Dictionary<int, float[]> monthlyTemps = new Dictionary<int, float[]>();
 
             layer.Tiles.ForEach((x) => {
                 monthlyTemps.Add(
                     x.tile.tileId,
-                    (float[]) BiomeWorkerUtility.GetMonthlyTemps(x)
+                    (float[])BiomeWorkerUtility.GetMonthlyTemps(x)
                 );
             });
             BiomeDef ocean = DefDatabase<BiomeDef>.GetNamed("Ocean");
@@ -26,27 +26,28 @@ namespace RimworldPlusPlus.RealisticBiomes{
 
                 // Enumerable.Count(IEnumerable<TSource>, Func<TSource, Boolean>) doesn't work, so I count the valid months manually
 
-                int validTropicalMonths = 0;
-                int validTemperateMonths = 0;
-                int validMonths = 0;
+                Mut<int> validTropicalMonths = new Mut<int>(0);
+                Mut<int> validTemperateMonths = new Mut<int>(0);
+                Mut<int> validMonths = new Mut<int>(0);
 
                 foreach(float i in monthlyTemps[x]){
                     if(i > 18){
-                        ++validTropicalMonths;
+                        ++validTropicalMonths.Variable;
                     }
                     if(i > 10){
-                        ++validTemperateMonths;
+                        ++validTemperateMonths.Variable;
                     }
                     if(i > 0){
-                        ++validMonths;
+                        ++validMonths.Variable;
                     }
                 }
                 if(tile.WaterCovered){
-                    if(validMonths == 0){
+                    if(validMonths.Variable == 0){
                         tile.PrimaryBiome = BiomeDefs.IceCapSea;
 
                         return;
                     }
+                    // Removes vanilla sea ice biome
                     else if(tile.PrimaryBiome.defName == "SeaIce"){
                         tile.PrimaryBiome = ocean;
                     }
@@ -65,48 +66,48 @@ namespace RimworldPlusPlus.RealisticBiomes{
 
                     case Dryness.Wet:
                         if(tile.swampiness >= 0.75f){
-                            if(validTropicalMonths == 12){
+                            if(validTropicalMonths.Variable == 12){
                                 tile.PrimaryBiome = BiomeDefs.TropicalWetSwamp;
 
                                 break;
                             }
-                            else if(validTemperateMonths >= 8){
+                            else if(validTemperateMonths.Variable >= 8){
                                 tile.PrimaryBiome = BiomeDefs.HumidSubtropicalSwamp;
 
                                 break;
                             }
-                            else if(validTemperateMonths >= 4){
+                            else if(validTemperateMonths.Variable >= 4){
                                 tile.PrimaryBiome = BiomeDefs.ContinentalSwamp;
 
                                 break;
                             }
-                            else if(validTemperateMonths >= 1){
+                            else if(validTemperateMonths.Variable >= 1){
                                 tile.PrimaryBiome = BiomeDefs.SubarcticSwamp;
 
                                 break;
                             }
                         }
-                        if(validTropicalMonths == 12){
+                        if(validTropicalMonths.Variable == 12){
                             tile.PrimaryBiome = tile.rainfall >= 2000 ? BiomeDefs.TropicalWetRainforest : BiomeDefs.TropicalWet;
 
                             break;
                         }
-                        else if(validTemperateMonths >= 8){
+                        else if(validTemperateMonths.Variable >= 8){
                             tile.PrimaryBiome = BiomeDefs.HumidSubtropical;
 
                             break;
                         }
-                        else if(validTemperateMonths >= 4 && tile.rainfall >= 100){
+                        else if(validTemperateMonths.Variable >= 4 && tile.rainfall >= 100){
                             tile.PrimaryBiome = BiomeDefs.Continental;
 
                             break;
                         }
-                        else if(validTemperateMonths >= 1 && tile.rainfall >= 100){
+                        else if(validTemperateMonths.Variable >= 1 && tile.rainfall >= 100){
                             tile.PrimaryBiome = BiomeDefs.Subarctic;
 
                             break;
                         }
-                        else if(validMonths >= 1 || validTemperateMonths >= 1 && tile.rainfall < 100){
+                        else if(validMonths.Variable >= 1 || validTemperateMonths.Variable >= 1 && tile.rainfall < 100){
                             tile.PrimaryBiome = BiomeDefs.RBTundra;
 
                             break;

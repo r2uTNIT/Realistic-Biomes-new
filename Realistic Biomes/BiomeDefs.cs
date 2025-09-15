@@ -2,7 +2,7 @@ using RimWorld;
 
 namespace RimworldPlusPlus.RealisticBiomes{
     [DefOf]
-    internal static class BiomeDefs{
+    static class BiomeDefs{
         public static BiomeDef TropicalWetRainforest;
         public static BiomeDef TropicalWet;
         public static BiomeDef TropicalWetSwamp;
