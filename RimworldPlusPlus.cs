@@ -14,7 +14,7 @@ namespace RimworldPlusPlus{
             harmony.PatchCategory("Realistic Biomes");
         }
         public override string SettingsCategory(){
-            return "Rimworld++";
+            return "Realistic Biomes";
         }
         public override void DoSettingsWindowContents(Rect inRect){
             Listing_Standard listingStandard = new Listing_Standard();
