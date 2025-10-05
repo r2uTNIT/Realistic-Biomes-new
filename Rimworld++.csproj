@@ -10,6 +10,7 @@
         <NoWarn>IDE0130</NoWarn>
         <NoWarn>IDE0059</NoWarn>
         <NoWarn>CS0649</NoWarn>
+        <NoWarn>IDE0029</NoWarn>
   	</PropertyGroup>
   
   	<ItemGroup>

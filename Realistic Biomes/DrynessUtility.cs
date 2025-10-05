@@ -1,12 +1,12 @@
 namespace RimworldPlusPlus.RealisticBiomes{
     static class DrynessUtility{
         public static Dryness IsDry(float temp, float rainfall){
-            float rainfall_percent = rainfall / 2;
+            float threshold = 13.75f * temp + 50;
 
-            if(rainfall < 20 * temp){
+            if(rainfall < threshold){
                 return Dryness.Arid;
             }
-            else if(rainfall < 20 * temp * 2){
+            else if(rainfall < threshold * 2){
                 return Dryness.Semiarid;
             }
             return Dryness.Wet;

@@ -1,12 +1,15 @@
 using HarmonyLib;
 using RimWorld.Planet;
+using Verse;
 
 namespace RimworldPlusPlus.RealisticBiomes{
     [HarmonyPatch(typeof(WorldGenerator), "GenerateWorld")]
     [HarmonyPatchCategory("Realistic Biomes")]
     static class GenerateWorldPatch{
         static void Prefix(ref OverallRainfall overallRainfall){
-            switch(RimworldPlusPlus.settings.seaLevel){
+            RimworldPlusPlusSettings settings = LoadedModManager.GetMod<RimworldPlusPlus>().settings;
+
+            switch(settings.seaLevel){
                 case SeaLevel.VeryDry:
                     overallRainfall = OverallRainfall.AlmostNone; 
 

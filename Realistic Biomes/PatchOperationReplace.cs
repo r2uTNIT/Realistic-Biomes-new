@@ -12,7 +12,7 @@ namespace RimworldPlusPlus.RealisticBiomes{
 			
             bool result = false;
 			
-            if(RimworldPlusPlus.settings.realisticBiomes){
+            if(true){
                 XmlNode[] array = xml.SelectNodes(xpath).Cast<XmlNode>().ToArray();
 
                 foreach (XmlNode xmlNode in array){
