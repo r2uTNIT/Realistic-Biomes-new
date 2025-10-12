@@ -21,12 +21,12 @@
 
         <Reference Include="UnityEngine.TextRenderingModule">
             <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
-          <Private>false</Private>
+            <Private>false</Private>
         </Reference>
 
         <Reference Include="UnityEngine.IMGUIModule">
             <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
-          <Private>false</Private>
+            <Private>false</Private>
         </Reference>
 
         <Reference Include="UnityEngine">
@@ -41,7 +41,11 @@
 
         <Reference Include="0Harmony">
             <HintPath>C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
-          <Private>false</Private>
-      </Reference>
+            <Private>false</Private>
+        </Reference>
+  	</ItemGroup>
+  
+  	<ItemGroup>
+  	    <PackageReference Include="System.Collections.Immutable" Version="9.0.9" />
   	</ItemGroup>
 </Project>
