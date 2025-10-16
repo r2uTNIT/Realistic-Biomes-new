@@ -19,6 +19,9 @@ namespace RimworldPlusPlus{
         public override void DoSettingsWindowContents(Rect inRect){
             Listing_Standard listingStandard = new Listing_Standard();
             listingStandard.Begin(inRect);
+            listingStandard.CheckboxLabeled("Extra Realistic Biome Generation", ref settings.extraRealisticBiomePlacement, @"Makes biome placement be based on 
+                average monthly (twelfthy) temperature, rather than average yearly temperature. Significantly increases world generation time.", 0);
+
             listingStandard.Gap(8f);
             listingStandard.Label("Sea Level");
 
