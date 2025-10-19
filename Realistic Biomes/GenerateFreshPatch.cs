@@ -16,6 +16,8 @@ namespace RimworldPlusPlus.RealisticBiomes{
         static void Postfix(PlanetLayer layer){
             RimworldPlusPlusSettings settings = LoadedModManager.GetMod<RimworldPlusPlus>().settings;
 
+            BiomeDef ocean = DefDatabase<BiomeDef>.GetNamed("Ocean");
+
             if(settings.extraRealisticBiomePlacement){
                 Dictionary<int, ImmutableArray<float>> monthlyTemps = new Dictionary<int, ImmutableArray<float>>();
 
@@ -25,7 +27,6 @@ namespace RimworldPlusPlus.RealisticBiomes{
                         BiomeWorkerUtility.DoMonthlyTemps(x, new None<float[]>())
                     );
                 });
-                BiomeDef ocean = DefDatabase<BiomeDef>.GetNamed("Ocean");
 
                 Array.ForEach(monthlyTemps.Keys.ToArray(), (x) => {
                     Tile tile = layer[x];
@@ -109,6 +110,13 @@ namespace RimworldPlusPlus.RealisticBiomes{
                             tile.PrimaryBiome = BiomeDefs.IceCapLand;
 
                             break;       
+                    }
+                });
+            }
+            else{
+                layer.Tiles.ForEach((x) => {
+                    if(x.PrimaryBiome.defName == "SeaIce"){
+                        x.PrimaryBiome = ocean;
                     }
                 });
             }

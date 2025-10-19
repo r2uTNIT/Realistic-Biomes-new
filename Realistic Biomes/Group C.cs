@@ -19,7 +19,7 @@ namespace RimworldPlusPlus.RealisticBiomes{
             else if(BiomeWorkerUtility.SwampNoiseCheck(Globals.SwampPerlin, coordinates)){
                 return 0f;
             }
-            else if(tile.temperature > 27.2 || tile.temperature < 15.3){
+            else if(tile.temperature > 22 || tile.temperature < 15.3){
                 return 0f;
             }
             else{
@@ -43,7 +43,7 @@ namespace RimworldPlusPlus.RealisticBiomes{
             else if(!BiomeWorkerUtility.SwampNoiseCheck(Globals.SwampPerlin, coordinates)){
                 return 0f;
             }
-            else if(tile.temperature > 27.2 || tile.temperature < 15.3){
+            else if(tile.temperature > 22 || tile.temperature < 15.3){
                 return 0f;
             }
             else{
