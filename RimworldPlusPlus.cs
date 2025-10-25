@@ -10,18 +10,22 @@ namespace RimworldPlusPlus{
         public RimworldPlusPlus(ModContentPack content) : base(content){
             settings = GetSettings<RimworldPlusPlusSettings>();
 
-            Harmony harmony = new Harmony("Rimworld++");
+            Harmony harmony = new("Rimworld++");
             harmony.PatchCategory("Realistic Biomes");
         }
         public override string SettingsCategory(){
             return "Realistic Biomes";
         }
         public override void DoSettingsWindowContents(Rect inRect){
-            Listing_Standard listingStandard = new Listing_Standard();
+            Listing_Standard listingStandard = new();
             listingStandard.Begin(inRect);
-            listingStandard.CheckboxLabeled("Extra Realistic Biome Generation", ref settings.extraRealisticBiomePlacement, @"Makes biome placement be based on 
-                average monthly (twelfthy) temperature, rather than average yearly temperature. Significantly increases world generation time.", 0);
-
+            listingStandard.CheckboxLabeled(
+                "Extra Realistic Biome Generation", 
+                ref settings.extraRealisticBiomePlacement, 
+                @"Makes biome placement be based on average monthly (twelfthy) temperature, rather than average yearly temperature. 
+                    This is more realistic, but also significantly increases world generation time.", 
+                0
+            );
             listingStandard.Gap(8f);
             listingStandard.Label("Sea Level");
 

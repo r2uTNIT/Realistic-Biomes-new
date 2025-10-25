@@ -6,7 +6,7 @@ namespace RimworldPlusPlus{
 
         bool IsDefined();
     }
-    struct Some<T> : IOption<T>{
+    class Some<T> : IOption<T>{
         public readonly T value;
 
         public Some(T value){
@@ -19,7 +19,7 @@ namespace RimworldPlusPlus{
             return true;
         }
     }
-    struct None<T> : IOption<T>{
+    class None<T> : IOption<T>{
         public T Get(){
             throw new Exception("Attempted to get an undefined value");
         }
