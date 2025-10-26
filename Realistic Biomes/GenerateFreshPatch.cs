@@ -19,6 +19,8 @@ namespace RimworldPlusPlus.RealisticBiomes{
             BiomeDef ocean = DefDatabase<BiomeDef>.GetNamed("Ocean");
 
             if(settings.extraRealisticBiomePlacement){
+                Log.Message("Hope you like loading screens!");
+
                 Dictionary<int, ImmutableArray<float>> monthlyTemps = new Dictionary<int, ImmutableArray<float>>();
 
                 layer.Tiles.ForEach((x) => {
