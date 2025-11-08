@@ -8,8 +8,8 @@ namespace RimworldPlusPlus{
         public bool extraRealisticBiomePlacement;
 
         public override void ExposeData(){
-            Scribe_Values.Look(ref seaLevel, "seaLevel", SeaLevel.Earthlike);
-            Scribe_Values.Look(ref extraRealisticBiomePlacement, "extraRealisticBiomePlacement", false);
+            Scribe_Values.Look(ref seaLevel, "seaLevel", defaultValue:SeaLevel.Earthlike);
+            Scribe_Values.Look(ref extraRealisticBiomePlacement, "extraRealisticBiomePlacement", defaultValue:true);
 
             base.ExposeData();
         }

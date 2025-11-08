@@ -5,6 +5,9 @@ using UnityEngine;
 using Verse;
 using Verse.Profile;
 using Verse.Sound;
+using HarmonyLib;
+using System;
+using System.Reflection;
 
 // *
 namespace RimworldPlusPlus.RealisticBiomes{
