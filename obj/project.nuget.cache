@@ -1,14 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ImAaVYqH0vo=",
+  "dgSpecHash": "/ITXz3xaDgI=",
   "success": true,
   "projectFilePath": "C:\\Users\\Chris\\Documents\\Rimworld++\\Rimworld++.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Chris\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
-    "C:\\Users\\Chris\\.nuget\\packages\\system.collections.immutable\\9.0.9\\system.collections.immutable.9.0.9.nupkg.sha512",
-    "C:\\Users\\Chris\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
-    "C:\\Users\\Chris\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\Chris\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

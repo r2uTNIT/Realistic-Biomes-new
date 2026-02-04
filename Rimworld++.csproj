@@ -45,8 +45,4 @@
             <Private>false</Private>
         </Reference>
   	</ItemGroup>
-  
-  	<ItemGroup>
-  	    <PackageReference Include="System.Collections.Immutable" Version="9.0.9" />
-  	</ItemGroup>
 </Project>
