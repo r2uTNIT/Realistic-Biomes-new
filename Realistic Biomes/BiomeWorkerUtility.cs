@@ -1,25 +1,22 @@
 using RimWorld;
 using RimWorld.Planet;
 using Verse;
-using System.Collections.Immutable;
 using Verse.Noise;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RimworldPlusPlus.RealisticBiomes{
     static class BiomeWorkerUtility{
         public const float PerlinCulling = 0.95f;
 
-        public static ImmutableArray<float> DoMonthlyTemps(Tile tile, IOption<float[]> temps, byte idx = 0){
-            float[] checkedTemps = temps.IsDefined() ? temps.Get() : new float[12];
+        public const int num = 30000;
 
-            if(idx < checkedTemps.Length){
-                checkedTemps[idx] = GenTemperature.AverageTemperatureAtTileForTwelfth(tile.tile, (Twelfth)idx);
+        public static IEnumerable<float> GetMonthlyTemps(PlanetTile tile){
+            // This looks like a really useful function | Enumerable.Range(0, 12)
 
-                return DoMonthlyTemps(tile, new Some<float[]>(checkedTemps), ++idx);
-            }
-            return ImmutableArray.Create(checkedTemps);
+            return new float[12].Select((x, y) => GenTemperature.AverageTemperatureAtTileForTwelfth(tile, (Twelfth)y));
         }
-        // Thank you BiomesKit!
         public static bool SwampNoiseCheck(Perlin perlin, Vector3 coordinates){
             return perlin.GetValue(coordinates) >= PerlinCulling;
         }

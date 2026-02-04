@@ -9,8 +9,8 @@ namespace RimworldPlusPlus{
         
         public const int PerlinOctaves = 12;
 
-        public static Perlin SwampPerlin = new Perlin(PerlinFrequency, PerlinLacunarity, PerlinPersistence, PerlinOctaves, Find.World.info.Seed, QualityMode.Low);
+        public static readonly Perlin SwampPerlin = new Perlin(PerlinFrequency, PerlinLacunarity, PerlinPersistence, PerlinOctaves, Find.World.info.Seed, QualityMode.Low);
 
-        public static RimworldPlusPlusSettings settings = LoadedModManager.GetMod<RimworldPlusPlus>().settings;
+        public static readonly RimworldPlusPlusSettings settings = LoadedModManager.GetMod<RimworldPlusPlus>().settings;
     }
 }

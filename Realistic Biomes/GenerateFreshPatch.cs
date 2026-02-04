@@ -4,39 +4,29 @@ using RimWorld.Planet;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
-using System;
-using System.Collections.Immutable;
 using UnityEngine;
 
 namespace RimworldPlusPlus.RealisticBiomes{
     [HarmonyPatch(typeof(WorldGenStep_Tiles), "GenerateFresh")]
     [HarmonyPatchCategory("Realistic Biomes")]
     static class GenerateFreshPatch{
-        // This is slow as fuck!
         static void Postfix(PlanetLayer layer){
-            RimworldPlusPlusSettings settings = LoadedModManager.GetMod<RimworldPlusPlus>().settings;
-
             BiomeDef ocean = DefDatabase<BiomeDef>.GetNamed("Ocean");
 
-            if(settings.extraRealisticBiomePlacement){
+            if(Globals.settings.extraRealisticBiomePlacement){
                 Log.Message("Hope you like loading screens!");
 
-                Dictionary<int, ImmutableArray<float>> monthlyTemps = new Dictionary<int, ImmutableArray<float>>();
+                var monthlyTemps = new Dictionary<int, IEnumerable<float>>(layer.Tiles.Count);
 
-                layer.Tiles.ForEach((x) => {
-                    monthlyTemps.Add(
-                        x.tile.tileId,
-                        BiomeWorkerUtility.DoMonthlyTemps(x, new None<float[]>())
-                    );
+                layer.Tiles.ForEach(x => {
+                    IEnumerable<float> temps = BiomeWorkerUtility.GetMonthlyTemps(x.tile);
+                    monthlyTemps.Add(x.tile.tileId, temps);
                 });
 
-                Array.ForEach(monthlyTemps.Keys.ToArray(), (x) => {
+                monthlyTemps.Keys.ToList().ForEach(x => {
                     Tile tile = layer[x];
-                    Vector3 coordinates = Find.WorldGrid.GetTileCenter(tile.tile);
 
-                    int validTropicalMonths = monthlyTemps[x].Count((y) => {return y > 18;});
-                    int validTemperateMonths = monthlyTemps[x].Count((y) => {return y > 10;});
-                    int validMonths = monthlyTemps[x].Count((y) => {return y > 0;});
+                    int validMonths = monthlyTemps[x].Count(y => y > 0);
 
                     if(tile.WaterCovered){
                         if(validMonths == 0){
@@ -62,6 +52,11 @@ namespace RimworldPlusPlus.RealisticBiomes{
                             break;
 
                         case Dryness.Wet:
+                            Vector3 coordinates = Find.WorldGrid.GetTileCenter(tile.tile);
+
+                            int validTropicalMonths = monthlyTemps[x].Count(y => y > 18);
+                            int validTemperateMonths = monthlyTemps[x].Count(y => y > 10);
+
                             if(BiomeWorkerUtility.SwampNoiseCheck(Globals.SwampPerlin, coordinates)){
                                 if(validTropicalMonths == 12){
                                     tile.PrimaryBiome = BiomeDefs.TropicalWetSwamp;
@@ -94,17 +89,17 @@ namespace RimworldPlusPlus.RealisticBiomes{
 
                                 break;
                             }
-                            else if(validTemperateMonths >= 4 /*&& tile.rainfall >= 100*/){
+                            else if(validTemperateMonths >= 4){
                                 tile.PrimaryBiome = BiomeDefs.Continental;
 
                                 break;
                             }
-                            else if(validTemperateMonths >= 1 /*&& tile.rainfall >= 100*/){
+                            else if(validTemperateMonths >= 1){
                                 tile.PrimaryBiome = BiomeDefs.Subarctic;
 
                                 break;
                             }
-                            else if(validMonths >= 1 /*|| validTemperateMonths >= 1 && tile.rainfall < 100*/){
+                            else if(validMonths >= 1){
                                 tile.PrimaryBiome = BiomeDefs.RBTundra;
 
                                 break;
@@ -116,7 +111,7 @@ namespace RimworldPlusPlus.RealisticBiomes{
                 });
             }
             else{
-                layer.Tiles.ForEach((x) => {
+                layer.Tiles.ForEach(x => {
                     if(x.PrimaryBiome.defName == "SeaIce"){
                         x.PrimaryBiome = ocean;
                     }
