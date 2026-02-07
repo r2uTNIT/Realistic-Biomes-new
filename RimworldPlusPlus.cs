@@ -23,7 +23,7 @@ namespace RimworldPlusPlus{
                 "Extra Realistic Biome Generation", 
                 ref settings.extraRealisticBiomePlacement, 
                 @"Makes biome placement be based on average monthly (twelfthy) temperature, rather than average yearly temperature. 
-                    This is more realistic, but also significantly increases world generation time.".Translate(), 
+                    This is more realistic, but also significantly increases world generation time.", 
                 0
             );
             listingStandard.Gap(8f);

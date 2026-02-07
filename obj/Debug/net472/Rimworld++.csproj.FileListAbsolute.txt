@@ -7,3 +7,4 @@ C:\Users\Chris\Documents\Rimworld++\obj\Debug\net472\Rimworld++.csproj.CoreCompi
 C:\Users\Chris\Documents\Rimworld++\obj\Debug\net472\Rimworld++.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Rimworld++\Assemblies\Rimworld++.dll
 C:\Users\Chris\Documents\Rimworld++\obj\Debug\net472\Rimworld++.sourcelink.json
+C:\Users\Chris\Documents\Rimworld++\obj\Debug\net472\Rimworld++.csproj.Up2Date
