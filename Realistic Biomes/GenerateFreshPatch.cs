@@ -14,8 +14,6 @@ namespace RimworldPlusPlus.RealisticBiomes{
             BiomeDef ocean = DefDatabase<BiomeDef>.GetNamed("Ocean");
 
             if(Globals.settings.extraRealisticBiomePlacement){
-                Log.Message("Hope you like loading screens!");
-
                 var monthlyTemps = new Dictionary<int, IEnumerable<float>>(layer.Tiles.Count);
 
                 layer.Tiles.ForEach(x => {
@@ -52,12 +50,10 @@ namespace RimworldPlusPlus.RealisticBiomes{
                             break;
 
                         case Dryness.Wet:
-                            Vector3 coordinates = Find.WorldGrid.GetTileCenter(tile.tile);
-
                             int validTropicalMonths = monthlyTemps[x].Count(y => y > 18);
                             int validTemperateMonths = monthlyTemps[x].Count(y => y > 10);
 
-                            if(BiomeWorkerUtility.SwampNoiseCheck(Globals.SwampPerlin, coordinates)){
+                            if(tile.swampiness >= 0.5){
                                 if(validTropicalMonths == 12){
                                     tile.PrimaryBiome = BiomeDefs.TropicalWetSwamp;
 

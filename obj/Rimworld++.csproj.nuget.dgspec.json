@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Chris\\Documents\\Rimworld++\\Rimworld++.csproj": {}
+    "C:\\Users\\Chris\\Documents\\Rimworld++\\Rimworld++.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Chris\\Documents\\Rimworld++\\Rimworld++.csproj": {
+    "C:\\Users\\Chris\\Documents\\Rimworld++\\Rimworld++.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Chris\\Documents\\Rimworld++\\Rimworld++.csproj",
+        "projectUniqueName": "C:\\Users\\Chris\\Documents\\Rimworld++\\Rimworld++.csproj",
         "projectName": "Rimworld++",
-        "projectPath": "c:\\Users\\Chris\\Documents\\Rimworld++\\Rimworld++.csproj",
+        "projectPath": "C:\\Users\\Chris\\Documents\\Rimworld++\\Rimworld++.csproj",
         "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Chris\\Documents\\Rimworld++\\obj\\",
+        "outputPath": "C:\\Users\\Chris\\Documents\\Rimworld++\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
