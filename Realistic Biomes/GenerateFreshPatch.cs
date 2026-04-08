@@ -45,8 +45,12 @@ namespace RimworldPlusPlus.RealisticBiomes{
                             break;
 
                         case Dryness.Semiarid:
-                            tile.PrimaryBiome = tile.temperature >= 18 ? BiomeDefs.HotSteppe : BiomeDefs.ColdSteppe;
-
+                            if(tile.swampiness >= 0.1){
+                                tile.PrimaryBiome = tile.temperature >= 18 ? BiomeDefs.Marsh : BiomeDefs.Mire;
+                            }
+                            else{
+                                tile.PrimaryBiome = tile.temperature >= 18 ? BiomeDefs.HotSteppe : BiomeDefs.ColdSteppe;
+                            }
                             break;
 
                         case Dryness.Wet:

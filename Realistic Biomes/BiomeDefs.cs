@@ -11,6 +11,8 @@ namespace RimworldPlusPlus.RealisticBiomes{
         public static BiomeDef ColdDesert;
         public static BiomeDef HotSteppe;
         public static BiomeDef ColdSteppe;
+        public static BiomeDef Marsh;
+        public static BiomeDef Mire;
 
         public static BiomeDef HumidSubtropical;
         public static BiomeDef HumidSubtropicalSwamp;
